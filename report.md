@@ -1,11 +1,16 @@
-Pointers Assignment Report
+cat << 'EOF' > report.md
+
+# Pointers Assignment Report
 
    This report provides an analysis of the five C programs implemented for the Pointers assignment. Each program focuses on a specific aspect of pointer usage in C, including basic pointer operations, pointer arithmetic, passing pointers to functions, double pointers, and string manipulation. Below is a detailed explanation of each program, how it works, observations about pointer behavior, and the GitHub repository link.
 GitHub Repository
-   The source code for all assignments is available at: https://github.com/RealGevorgian/pointers_assignment.git  
-.
-Assignment 1: Basics of Pointers
-Code
+   The source code for all assignments is available at: https://github.com/RealGevorgian/pointers_assignment.git 
+
+
+## Assignment 1: Basics of Pointers
+
+### Code
+
 #include <stdio.h>
 
 int main() {
@@ -21,7 +26,7 @@ int main() {
     return 0;
 }
 
-Explanation
+## Explanation
 
 Objective: Understand basic pointer operations, including the address-of operator (&) and dereferencing (*).
 How It Works:
@@ -37,15 +42,18 @@ Address stored in ptr: 0x7ffee4a0c4ac
 New value of num: 100
 
 
-Observations:
+### Observations:
+
 Pointers store memory addresses, allowing direct manipulation of a variable's value via dereferencing.
 The address-of operator (&) retrieves the memory location, and the dereference operator (*) accesses or modifies the value at that location.
 This demonstrates the power of pointers in accessing and altering memory directly, but care must be taken to avoid invalid memory access.
 
 
 
-Assignment 2: Pointer Arithmetic
-Code
+## Assignment 2: Pointer Arithmetic
+
+### Code
+
 #include <stdio.h>
 
 int main() {
@@ -77,7 +85,7 @@ int main() {
     return 0;
 }
 
-Explanation
+## Explanation
 
 Objective: Learn pointer arithmetic to traverse and modify an array.
 How It Works:
@@ -93,15 +101,18 @@ Modified array (using pointer): 2 4 6 8 10
 Modified array (using array name): 2 4 6 8 10
 
 
-Observations:
+### Observations:
+
 Pointer arithmetic (ptr + i) automatically accounts for the size of the data type (e.g., int is typically 4 bytes), so ptr + 1 moves to the next integer.
 The array name arr acts like a pointer to the first element, making arr[i] equivalent to *(arr + i) or *(ptr + i).
 Modifying the array via pointers directly affects the original array, as pointers reference the same memory.
 
 
 
-Assignment 3: Pointers and Functions
-Code
+## Assignment 3: Pointers and Functions
+
+### Code
+
 #include <stdio.h>
 
 void swap(int *a, int *b) {
@@ -122,7 +133,7 @@ int main() {
     return 0;
 }
 
-Explanation
+## Explanation
 
 Objective: Learn to pass pointers to functions for modifying variables.
 How It Works:
@@ -136,15 +147,18 @@ Output:Before swap: x = 10, y = 20
 After swap: x = 20, y = 10
 
 
-Observations:
+### Observations:
+
 Passing pointers to a function allows modification of the original variables (pass-by-reference), unlike pass-by-value, which only modifies copies.
 The swap function uses dereferencing (*a, *b) to access and modify the values at the memory addresses.
 This demonstrates how pointers enable functions to have side effects on variables outside their scope.
 
 
 
-Assignment 4: Pointers to Pointers
-Code
+## Assignment 4: Pointers to Pointers
+
+### Code
+
 #include <stdio.h>
 
 int main() {
@@ -158,7 +172,7 @@ int main() {
     return 0;
 }
 
-Explanation
+## Explanation
 
 Objective: Work with double pointers to access a variable indirectly.
 How It Works:
@@ -172,15 +186,18 @@ Output:Value of integer using pointer: 42
 Value of integer using double-pointer: 42
 
 
-Observations:
+### Observations:
+
 A double pointer (**dptr) stores the address of a pointer, allowing indirect access to the original variable.
 Dereferencing dptr once (*dptr) yields ptr, and dereferencing again (**dptr) yields num's value.
 Double pointers are useful in scenarios like modifying a pointer's address in a function (e.g., dynamic memory allocation).
 
 
 
-Assignment 5: Strings and Character Pointers
-Code
+## Assignment 5: Strings and Character Pointers
+
+### Code
+
 #include <stdio.h>
 
 int main() {
@@ -207,7 +224,7 @@ int main() {
     return 0;
 }
 
-Explanation
+## Explanation
 
 Objective: Manipulate strings using character pointers and pointer arithmetic.
 How It Works:
@@ -221,14 +238,15 @@ Output:String: Hello
 Number of characters: 5
 
 
-Observations:
+### Observations:
+
 Strings in C are null-terminated arrays of characters, and a pointer to the first character can traverse the string.
 Pointer arithmetic on char* increments by 1 byte (size of char), allowing precise character-by-character navigation.
 The null terminator (\0) is critical for determining the string's end, preventing out-of-bounds access.
 
 
 
-General Observations on Pointer Behavior
+# General Observations on Pointer Behavior
 
 Memory Access: Pointers provide direct access to memory, enabling efficient manipulation of variables and data structures but requiring careful handling to avoid errors like dereferencing null or invalid pointers.
 Flexibility: Pointers allow pass-by-reference in functions (Assignment 3), dynamic memory access (Assignment 4), and array/string traversal (Assignments 2 and 5).
