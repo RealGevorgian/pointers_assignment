@@ -1,7 +1,9 @@
 Pointers Assignment Report
+
    This report provides an analysis of the five C programs implemented for the Pointers assignment. Each program focuses on a specific aspect of pointer usage in C, including basic pointer operations, pointer arithmetic, passing pointers to functions, double pointers, and string manipulation. Below is a detailed explanation of each program, how it works, observations about pointer behavior, and the GitHub repository link.
 GitHub Repository
-   The source code for all assignments is available at: https://github.com/username/pointers-assignment   Note: Replace the above link with the actual repository link after pushing the code.
+   The source code for all assignments is available at: https://github.com/RealGevorgian/pointers_assignment.git  
+.
 Assignment 1: Basics of Pointers
 Code
 #include <stdio.h>
